@@ -4,6 +4,7 @@ from django.urls import reverse
 import markdown
 from django.utils.html import strip_tags
 
+
 # Create your models here.
 
 class Category(models.Model):
@@ -11,6 +12,9 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('blog:category', kwargs={'pk': self.pk})
 
 
 class Tag(models.Model):
