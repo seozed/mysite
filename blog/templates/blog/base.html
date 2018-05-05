@@ -42,10 +42,10 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="index.html" data-hover="首页">首页</a></li>
-                            <li class="cl-effect-11"><a href="full-width.html" data-hover="博客">博客</a></li>
-                            <li class="cl-effect-11"><a href="about.html" data-hover="关于">关于</a></li>
-                            <li class="cl-effect-11"><a href="contact.html" data-hover="联系">联系</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog:index' %}" data-hover="首页">首页</a></li>
+                            <li class="cl-effect-11"><a href="#" data-hover="博客">博客</a></li>
+                            <li class="cl-effect-11"><a href="#" data-hover="关于">关于</a></li>
+                            <li class="cl-effect-11"><a href="#" data-hover="联系">联系</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
@@ -83,9 +83,9 @@
                     <ul>
                         {% for post in recent_post_list %}
                             <li>
-                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                             </li>
-                            {% empty %}
+                        {% empty %}
                             暂无文章！
                         {% endfor %}
                     </ul>
@@ -96,9 +96,10 @@
                     <ul>
                         {% for date in date_list %}
                             <li>
-                            <a href="{% url 'blog:archives' date.year date.month %}">{{ date.year }} 年 {{ date.month }} 月</a>
+                                <a href="{% url 'blog:archives' date.year date.month %}">{{ date.year }}
+                                    年 {{ date.month }} 月</a>
                             </li>
-                            {% empty %}
+                        {% empty %}
                             暂无归档！
                         {% endfor %}
                     </ul>
@@ -111,7 +112,7 @@
                         <li>
                             <a href="#">{{ category.name }}<span class="post-count">(13)</span> </a>
                         </li>
-                        {% empty %}
+                    {% empty %}
                         暂无分类！
                     {% endfor %}
                 </div>
@@ -176,10 +177,10 @@
     <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
     <nav>
         <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="full-width.html">博客</a></li>
-            <li><a href="about.html">关于</a></li>
-            <li><a href="contact.html">联系</a></li>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">博客</a></li>
+            <li><a href="#">关于</a></li>
+            <li><a href="#">联系</a></li>
         </ul>
     </nav>
 </div>
